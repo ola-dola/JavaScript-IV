@@ -14,7 +14,7 @@ class Person {
   }
 }
 //Person class test.
-const bali = new Person({name: 'Tope', age: 23, location: 'Ibadan'});
+const bali = new Person({ name: 'Tope', age: 23, location: 'Ibadan' });
 const bili = new Person({ name: 'Bilie', age: 53, location: 'London' });
 const ed = new Person({ name: 'Ed', age: 63, location: 'Lagos' });
 
@@ -41,10 +41,9 @@ class Instructor extends Person {
   }
 }
 //Instructor test
-
 const gabe = new Instructor({
-  name: 'Gabe', 
-  age: 35, 
+  name: 'Gabe',
+  age: 35,
   location: 'Spain',
   specialty: 'Redux',
   favLanguage: 'Javascript',
@@ -53,7 +52,7 @@ const gabe = new Instructor({
 
 const alex = new Instructor({
   name: 'Alex',
-  age:29,
+  age: 29,
   location: 'UK',
   specialty: 'Frontend',
   favLanguage: 'Javascript',
@@ -61,4 +60,51 @@ const alex = new Instructor({
 });
 
 alex.demo('react');
-gabe.grade({name: 'Ola'}, 'Napping');
+gabe.grade({ name: 'Ola' }, 'Napping');
+
+//Student class
+class Student extends Person {
+  constructor(attributes) {
+    super(attributes);
+    this.previousBackground = attributes.previousBackground;
+    this.className = attributes.className;
+    this.favSubjects = attributes.favSubjects;
+  }
+
+  listsSubjects() {
+    this.favSubjects.map(subject => {
+      console.log(subject);
+    });
+  }
+
+  PRAssignment(subject) {
+    console.log(`${this.name} has submitted a PR for ${subject}`);
+  }
+
+  sprintChallenge(subject) {
+    console.log(`${this.name}  has begun sprint challenge on ${subject}`);
+  }
+}
+
+//Student test
+const abel = new Student({
+  name: 'Abel',
+  age: 23,
+  location: 'Ireland',
+  previousBackground: 'Athlete',
+  className: 'EU4',
+  favSubjects: ['Html', 'CSS', 'JavaScript']
+});
+
+const kandis = new Student({
+  name: 'Kandi',
+  age: 25,
+  location: 'I. Coast',
+  previousBackground: 'Diver',
+  classNam: 'WEB21',
+  favSubjects: ['Ruby', 'Python', 'P5.js']
+});
+
+abel.listsSubjects();
+kandis.sprintChallenge('Debugging');
+kandis.PRAssignment('Jest');
