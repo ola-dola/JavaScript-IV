@@ -61,3 +61,22 @@ class Car {
 //Test 2
 const bmw = new Car('645li', 45);
 console.log(bmw.fill(34));
+
+//Task 3
+class Baby extends Person {
+  constructor(name, favoriteToy, age) {
+    super(name, age);
+    this.favoriteToy = favoriteToy;
+  }
+
+  play() {
+    return `Playing with ${this.favoriteToy}, `;
+  };
+}
+
+const poole = new Baby('poole', 'mini-train', 7);
+
+console.log(Baby);
+console.log(poole);
+console.log(poole.play());
+
