@@ -39,6 +39,13 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student.name} receives a perfect score on ${subject}`)
   }
+
+  review(student) {
+    const max = 100;
+    const min = 1;
+    student.grade = Math.ceil(Math.random() * (max - min)) + min;
+    console.log(student.grade);
+  }
 }
 //Instructor test
 const gabe = new Instructor({
@@ -69,6 +76,7 @@ class Student extends Person {
     this.previousBackground = attributes.previousBackground;
     this.className = attributes.className;
     this.favSubjects = attributes.favSubjects;
+    this.grade = attributes.grade;
   }
 
   listsSubjects() {
@@ -93,7 +101,8 @@ const abel = new Student({
   location: 'Ireland',
   previousBackground: 'Athlete',
   className: 'EU4',
-  favSubjects: ['Html', 'CSS', 'JavaScript']
+  favSubjects: ['Html', 'CSS', 'JavaScript'],
+  grade: 87
 });
 
 const kandis = new Student({
@@ -102,7 +111,8 @@ const kandis = new Student({
   location: 'I. Coast',
   previousBackground: 'Diver',
   classNam: 'WEB21',
-  favSubjects: ['Ruby', 'Python', 'P5.js']
+  favSubjects: ['Ruby', 'Python', 'P5.js'],
+  grade: 99
 });
 
 abel.listsSubjects();
@@ -153,3 +163,7 @@ tigran.standUp('eu4_tigran');
 tobi.debugsCode(kandis, 'react');
 tobi.demo('redux');
 tigran.grade(abel, 'Node');
+
+
+gabe.review(abel);
+tobi.review(kandis);
