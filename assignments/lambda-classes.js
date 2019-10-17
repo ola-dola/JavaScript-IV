@@ -3,11 +3,10 @@
 //Person class.
 
 class Person {
-  constructor(name, age, location) {
-    this.name = name;
-    this.age = age;
-    this.name = name;
-    this.location = location;
+  constructor(attr) {
+    this.name = attr.name;
+    this.age = attr.age;
+    this.location = attr.location;
   }
 
   speak() {
@@ -15,9 +14,9 @@ class Person {
   }
 }
 //Person class test.
-const bali = new Person('Tope', 23, 'Ibadan');
-const bili = new Person('Kofe', 25, 'London');
-const ed = new Person('Ed', 32, 'Oak');
+const bali = new Person({name: 'Tope', age: 23, location: 'Ibadan'});
+const bili = new Person({ name: 'Bilie', age: 53, location: 'London' });
+const ed = new Person({ name: 'Ed', age: 63, location: 'Lagos' });
 
 console.log(bali.speak());
 console.log(bili.speak());
