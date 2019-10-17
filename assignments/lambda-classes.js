@@ -92,6 +92,15 @@ class Student extends Person {
   sprintChallenge(subject) {
     console.log(`${this.name}  has begun sprint challenge on ${subject}`);
   }
+  
+  graduate(teamLead) {
+    if (this.grade > 70) {
+      console.log(`Congratulations ${this.name}, good luck on your journey!`);
+    } else {
+      teamLead.review(this);
+      console.log(`You need a little bit more polishing. I believe in you.`);
+    }
+  }
 }
 
 //Student test
@@ -164,6 +173,9 @@ tobi.debugsCode(kandis, 'react');
 tobi.demo('redux');
 tigran.grade(abel, 'Node');
 
-
+//Stretch tests
 gabe.review(abel);
 tobi.review(kandis);
+
+abel.graduate(tobi);
+kandis.graduate(tigran);
