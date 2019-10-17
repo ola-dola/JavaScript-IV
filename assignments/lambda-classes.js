@@ -108,3 +108,48 @@ const kandis = new Student({
 abel.listsSubjects();
 kandis.sprintChallenge('Debugging');
 kandis.PRAssignment('Jest');
+
+//PM class
+class projectManager extends Instructor {
+  constructor(attributes) {
+    super(attributes);
+    this.gradClassName = attributes.gradClassName;
+    this.favInstructor = attributes.favInstructor;
+  }
+
+  standUp(channel) {
+    console.log(`${this.name} announces to ${channel}, @channel standy times!​​​​​`);
+  }
+
+  debugsCode(student, subject) {
+    console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+  }
+}
+
+const tigran = new projectManager({
+  name: 'Tigran',
+  age: 26,
+  location: 'Thailand?',
+  specialty: 'Backend?',
+  favLanguage: 'Javascript?',
+  catchPhrase: 'Hello world.',
+  gradClassName: 'EU2',
+  favInstructor: 'Gabe'
+});
+
+const tobi = new projectManager({
+  name: 'Tobi',
+  age: 24,
+  location: 'Lagos',
+  specialty: 'frontend',
+  favLanguage: 'Javascript?',
+  catchPhrase: 'zzZZ',
+  gradClassName: 'EU2',
+  favInstructor: 'Gabe'
+});
+
+//PM test
+tigran.standUp('eu4_tigran');
+tobi.debugsCode(kandis, 'react');
+tobi.demo('redux');
+tigran.grade(abel, 'Node');
